@@ -38,7 +38,7 @@ The Project is now ready to be tested on a real device or Emulator, to run app, 
 </p>
 
 ## Screenshots
-  --------- | ---------- 
+  --------- | ---------- |----------
  :--------: | :--------: | :--------:
 <img src="assets/images/insomania"width="300"> |<img src="assets/images/insomania2"width="300"> | <img src="assets/images/insomania3"width="300">|
 
