@@ -30,3 +30,16 @@ this should be the resulting screen after a successful pubrun
 <p align="center">
     <img src="assets/images/yash.png">
 </p>
+
+
+The Project is now ready to be tested on a real device or Emulator, to run app, locate run on the menu bar and select run'main.dart'
+<p align="center">
+    <img src="assets/images/runmain.png">
+</p>
+
+## Screenshots
+
+ :--------:|:--------:|:--------:
+<img src="assets/images/insomania"width="300"> |<img src="assets/images/insomania2"width="300"> | <img src="assets/images/insomania3"width="300">|
+
+
