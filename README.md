@@ -40,6 +40,6 @@ The Project is now ready to be tested on a real device or Emulator, to run app, 
 ## Screenshots
  screenshots column1 | Screenshot column2 | Screenshot column3
  :--------: | :--------: | :--------:
-<img src="assets/images/insomania" width="300"> |<img src="assets/images/insomania2"width="300"> | <img src="assets/images/insomania3"width="300">|
+<img src="assets/images/insomania.jpg" width="300"> |<img src="assets/images/insomania2.jpg" width="300"> | <img src="assets/images/insomania3.jpg" width="300">|
 
 
