@@ -4,7 +4,9 @@
 
 
 ## Project Overview
-This is a simple music play app with a beautiful UI, this app was created to mimic spotify, its almost similar to spotify but not as vast as spotify. Flutter was the framework used to build the app
+This is a simple music play app with a beautiful UI, this app was created to mimic spotify, its almost similar to spotify but not as vast as spotify. Flutter was the framework used to build the app.
+
+![GitHub](https://img.shields.io/github/license/VershimaKelvin/music_app)
 
 ## Installation
 To get the source code up and running on your computer, you need to first install an IDE, preferably [Android Studio](https://developer.android.com/studio?gclid=Cj0KCQiAmKiQBhClARIsAKtSj-mCE3Dc0T4FuVNp5WzCsOKbAIlaTP-7DuCYL-p5D8PZbAPgfU6IizEaAuYyEALw_wcB&gclsrc=aw.ds), follow instructions that pop up while installing Android studio.
@@ -38,8 +40,8 @@ The Project is now ready to be tested on a real device or Emulator, to run app, 
 </p>
 
 ## Screenshots
-
- :--------:|:--------:|:--------:
-<img src="assets/images/insomania"width="300"> |<img src="assets/images/insomania2"width="300"> | <img src="assets/images/insomania3"width="300">|
+ screenshots column1 | Screenshot column2 | Screenshot column3
+ :--------: | :--------: | :--------:
+<img src="assets/images/insomania2.jpg" width="300"> |<img src="assets/images/insomania.jpg" width="300"> | <img src="assets/images/insomania3.jpg" width="300">|
 
 
