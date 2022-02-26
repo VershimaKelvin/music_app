@@ -1,9 +1,23 @@
+import 'dart:typed_data';
+
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-class PlayControls extends StatelessWidget {
+class PlayControls extends StatefulWidget {
   PlayControls({Key key}) : super(key: key);
 
+  @override
+  State<PlayControls> createState() => _PlayControlsState();
+}
+
+class _PlayControlsState extends State<PlayControls> {
+  AudioPlayer audioPlayer = AudioPlayer();
+  String audioAddress = 'assets/sound/Sia_-_Snowman_GoodLuckExpo.com.mp3';
+
+
+  bool isPlaying = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,9 +37,18 @@ class PlayControls extends StatelessWidget {
               Ionicons.ios_skip_backward,
               size: 32,
             ),
-            Icon(
-              MaterialCommunityIcons.pause_circle,
-              size: 64,
+            GestureDetector(
+              onTap: ()async{
+               if(isPlaying){
+                 pauseAudio();
+               }else{
+                 playAudio();
+               }
+              },
+              child: Icon(
+                isPlaying? MaterialCommunityIcons.pause_circle: Icons.play_arrow,
+                size: 64,
+              ),
             ),
             Icon(
               Ionicons.ios_skip_forward,
@@ -39,5 +62,26 @@ class PlayControls extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void playAudio()async{
+    ByteData byteData = await rootBundle.load(audioAddress);
+    Uint8List audiobytes = byteData.buffer.asUint8List(byteData.offsetInBytes, byteData.lengthInBytes);
+    int result = await audioPlayer.playBytes(audiobytes);
+    if(result == 1) {
+      setState(() {
+        isPlaying = true;
+      });//play success
+
+    }
+  }
+
+  void pauseAudio()async {
+    int result = await audioPlayer.pause();
+    if (result == 1) {
+      setState(() {
+        isPlaying=false;
+      });
+    }
   }
 }
