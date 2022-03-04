@@ -1,6 +1,9 @@
+import 'dart:typed_data';
 import 'dart:ui';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:music_app/widgets/widgets.dart';
 
@@ -11,6 +14,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  AudioPlayer audioPlayer = AudioPlayer();
+  String audioAddress = 'assets/sound/Sia_-_Snowman_GoodLuckExpo.com.mp3';
   final _searchFocusNode = FocusNode();
 
   @override
@@ -102,9 +107,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 label: 'Cloud Rap',
                 image: AssetImage('assets/images/cloud_rap.jpg'),
               ),
-              GenreItem(
-                label: 'Trap',
-                image: AssetImage('assets/images/trap.jpg'),
+              GestureDetector(
+                onTap: ()async{
+                  ByteData byteData = await rootBundle.load(audioAddress);
+                  Uint8List audiobytes = byteData.buffer.asUint8List(byteData.offsetInBytes, byteData.lengthInBytes);
+                  int result = await audioPlayer.playBytes(audiobytes);
+                },
+                child: GenreItem(
+                  label: 'Trap',
+                  image: AssetImage('assets/images/trap.jpg'),
+                ),
               ),
               GenreItem(
                 label: 'Lo-Fi',
