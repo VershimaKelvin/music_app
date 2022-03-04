@@ -42,7 +42,7 @@ class _PlayControlsState extends State<PlayControls> {
                if(isPlaying){
                  pauseAudio();
                }else{
-                 playAudio();
+                 resumeAudio();
                }
               },
               child: Icon(
@@ -64,10 +64,10 @@ class _PlayControlsState extends State<PlayControls> {
     );
   }
 
-  void playAudio()async{
+  void resumeAudio()async{
     ByteData byteData = await rootBundle.load(audioAddress);
     Uint8List audiobytes = byteData.buffer.asUint8List(byteData.offsetInBytes, byteData.lengthInBytes);
-    int result = await audioPlayer.playBytes(audiobytes);
+    int result = await audioPlayer.resume();
     if(result == 1) {
       setState(() {
         isPlaying = true;
